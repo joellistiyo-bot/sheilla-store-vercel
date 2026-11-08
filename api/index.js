@@ -23,7 +23,13 @@ const norm=db=>{if(!Array.isArray(db.games))db.games=[{id:"sg",name:"Stumble Guy
  if(!Array.isArray(db.methods))db.methods=[Q0()];db.cfg.neg=db.cfg.neg||0;db.cfg.negu=db.cfg.negu||0;if(db.cfg.footer===undefined)db.cfg.footer="Cepat murah aman di Sheilla Store tempatnya 🔥🔥";if(db.cfg.footon===undefined)db.cfg.footon=true;if(db.cfg.toast===undefined)db.cfg.toast=true;return db};
 const code=(db,price)=>{let c,i=0;do{c=100+Math.floor(Math.random()*900);i++}while(i<60&&db.tx.some(x=>x.st==="pending"&&x.method!=="bal"&&(x.cur||"IDR")==="IDR"&&x.total===price+c));return c};
 const fm=(n,c)=>c==="USD"?"$"+Number(n).toFixed(2):"Rp "+Number(n).toLocaleString("id-ID");
+async function sendMail(text){
+ const k=process.env.RESEND_API_KEY,to=process.env.NOTIFY_EMAIL;
+ if(!k||!to)return;
+ try{await fetch("https://api.resend.com/emails",{method:"POST",headers:{"content-type":"application/json",Authorization:"Bearer "+k},body:JSON.stringify({from:"Sheilla Store <onboarding@resend.dev>",to:[to],subject:String(text).split("\n")[0].slice(0,100),text:String(text).slice(0,5000)}),signal:AbortSignal.timeout(4000)})}catch{}
+}
 async function sendWA(db,text,force){
+ await sendMail(text);
  const n=db.notif;if(!n||!n.token||!n.target||(!n.on&&!force))return{ok:false,detail:"Notifikasi belum aktif atau belum lengkap"};
  try{const fd=new FormData();fd.append("target",n.target);fd.append("message",text);fd.append("countryCode","62");
   const r=await fetch("https://api.fonnte.com/send",{method:"POST",headers:{Authorization:n.token},body:fd,signal:AbortSignal.timeout(4000)});
