@@ -153,12 +153,12 @@ html,body{color-scheme:light}html{background:#faf6ec}
 body{--p:#ff4d8d;--p2:#111;--bg:#faf6ec;--card:#fff;--tx:#111;--prgb:255,77,141;--bgrgb:250,246,236;--cardrgb:255,255,255;--card2:#fff;--top:#faf6ec;--b1:#111;--b2:#e5dfcf;--b3:#111;--b4:#111;--b5:#111;--p3:#111;--mut:#6b6b6b;--mut2:#555;color:#111}
 body::before{background:linear-gradient(#0000000d 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,#0000000d 1px,transparent 1px) 0 0/24px 24px,#faf6ec}
 .banner,.mascot,#hd,#sb{display:none!important}.hero{padding:6px 16px 0}
-header{background:#faf6ec;border-bottom:4px solid #111;position:sticky;top:0;z-index:7;gap:8px}
+header{background:#faf6ec;border-bottom:4px solid #111;position:sticky;top:0;z-index:7;gap:8px;padding:10px}.hb{flex:none}.hr{flex:none}
 .hb{background:#ffd93d;border:3px solid #111;border-radius:10px;box-shadow:3px 3px 0 #111;padding:6px}.hb svg{stroke:#111}
-.hl{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none;color:#111;min-width:0}
-.hl img{width:40px;height:40px;border:3px solid #111;border-radius:10px;object-fit:cover;background:#fff}
-.hl b{font-family:'Lilita One',sans-serif;font-weight:400;font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.acc{background:#ff4d8d;color:#fff;border:3px solid #111;border-radius:12px;box-shadow:3px 3px 0 #111;animation:none}
+.hbr{display:flex;align-items:center;gap:8px;margin-right:auto;flex:1 1 auto;text-decoration:none;color:#111;min-width:0}
+.hbr img{flex:none;width:40px;height:40px;border:3px solid #111;border-radius:10px;object-fit:cover;background:#fff}
+.hbr b{font-family:'Lilita One',sans-serif;font-weight:400;font-size:17px;line-height:1.05;white-space:normal}
+.acc{position:relative;width:46px;height:46px;padding:0;display:grid;place-items:center;background:#ff4d8d;color:#fff;border:3px solid #111;border-radius:12px;box-shadow:3px 3px 0 #111;animation:none}
 h2,.gh{color:#111;background:#6ee7b7;display:inline-block;border:3px solid #111;border-radius:10px;padding:4px 12px;box-shadow:3px 3px 0 #111;font-size:18px}
 .gt,.denom,.tc,details,.sr,.pi,.box,.lv,.gc,.ts{background:#fff;color:#111;border:3px solid #111;box-shadow:4px 4px 0 #111;border-radius:14px;animation:none}
 .price{color:#111;animation:none}.gc.on{background:#ff4d8d;color:#fff;box-shadow:3px 3px 0 #111}.gt.on{background:#ffd93d;box-shadow:4px 4px 0 #111}
@@ -185,13 +185,14 @@ footer .fk{display:block;color:#fff;font-weight:800;text-decoration:none;padding
 body.dk{--bg:#0f1019;--card:#181b30;--card2:#16213e;--tx:#f2f2f7;--p2:#f2f2f7;--b2:#2a2f4a;--mut:#9aa0b8;--mut2:#b4b9d0;--bgrgb:15,16,25;--cardrgb:24,27,48;--top:#0f1019;color:#f2f2f7}
 html:has(body.dk){background:#0f1019;color-scheme:dark}
 body.dk::before{background:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/24px 24px,#0f1019}
-body.dk header,body.dk nav{background:#0f1019;border-bottom-color:#7c83b8}body.dk .hl,body.dk .hl b{color:#f2f2f7}body.dk .hl img,body.dk .acc{border-color:#f2f2f7}
+body.dk header,body.dk nav{background:#0f1019;border-bottom-color:#7c83b8}body.dk .hbr,body.dk .hbr b{color:#f2f2f7}body.dk .hbr img,body.dk .acc{border-color:#f2f2f7}
 body.dk .gt,body.dk .denom,body.dk .tc,body.dk details,body.dk .sr,body.dk .pi,body.dk .box,body.dk .lv,body.dk .gc,body.dk .ts{background:#181b30;color:#f2f2f7;border-color:#7c83b8;box-shadow:4px 4px 0 #000}
 body.dk .gt.on{background:#ffd93d;color:#111}body.dk .gc.on,body.dk nav button.on{background:#ff4d8d;color:#fff}body.dk .price{color:#f2f2f7}
 body.dk nav button,body.dk .cl{background:#181b30;color:#f2f2f7;border-color:#7c83b8}
 body.dk input,body.dk select,body.dk textarea,body.dk .box input{background:#0f1019;color:#f2f2f7;border-color:#7c83b8}
 body.dk .bar{background:#181b30;color:#f2f2f7;border-top-color:#7c83b8}body.dk .bar button{background:#ffd93d;color:#111}
 body.dk .dr{background:#16213e;border-right-color:#7c83b8}body.dk .drh{color:#f2f2f7}body.dk .dr button{background:#1b1f3a;color:#f2f2f7;border-color:#7c83b8;box-shadow:3px 3px 0 #000}body.dk .dr button.on{background:#ffd93d;color:#111}body.dk .dr button span{color:#b4b9d0}body.dk .dmode{border-color:#f2f2f7;box-shadow:3px 3px 0 #000}
+.acc .ad{position:absolute;top:-5px;right:-5px;width:12px;height:12px;border-radius:50%;background:#25d366;border:2px solid #111}.hl.rw{max-height:none}
 </style>
 </head>
 <body>
@@ -199,8 +200,8 @@ body.dk .dr{background:#16213e;border-right-color:#7c83b8}body.dk .drh{color:#f2
 <div id="ld" hidden>MEMUAT DETAIL GAME &amp; PEMBAYARAN...</div>
 <header>
 <button class="hb" id="hb" aria-label="Menu"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-<a class="hl" id="hl" href="/"><img id="hli" alt="" hidden><b id="hbn"></b></a>
-<div class="hr" style="display:flex;align-items:center;gap:8px"><div class="lgw" id="lgw"></div><button class="acc" id="acc">Masuk / Daftar</button></div>
+<a class="hbr" id="hl" href="/"><img id="hli" alt="" hidden><b id="hbn"></b></a>
+<div class="hr" style="display:flex;align-items:center;gap:8px"><div class="lgw" id="lgw"></div><button class="acc" id="acc" aria-label="Akun" title="Masuk / Daftar"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></button></div>
 </header>
 
 <div class="banner"><span id="bn">CEPAT &bull; MURAH &bull; AMAN</span></div>
@@ -219,9 +220,10 @@ body.dk .dr{background:#16213e;border-right-color:#7c83b8}body.dk .drh{color:#f2
 <h2>Pilih Game</h2>
 <input id="q" class="sr" placeholder="Cari game..." autocomplete="off">
 <div id="cats" class="gl"></div><div id="games" class="gg"></div>
-<h2>Transaksi Terakhir</h2><div id="live" class="lvw"></div>
 </section>
 <section id="v-game" hidden></section>
+<section id="v-riwayat" hidden><h2>Riwayat Transaksi</h2><div id="rw"></div><h2 style="margin-top:18px">Transaksi Terakhir</h2><div class="hint">Pesanan terbaru dari semua pembeli.</div><div id="live" class="lvw"></div></section>
+<section id="v-info" hidden><h2 id="itl"></h2><div id="itx" class="tc"></div><button class="btn cl" onclick="go('/')">\u2190 Kembali ke Home</button></section>
 <section id="v-price" hidden><h2>Daftar Harga</h2><select id="pf" class="sr"></select><div id="pt"></div></section>
 <section id="v-track" hidden><h2>Cek Pesanan</h2><div class="hint">Masukkan ID transaksi (contoh: T1abc2d3e4f) yang kamu terima saat membayar.</div><input id="ti" class="sr" placeholder="ID transaksi" autocapitalize="none"><button class="btn ok" id="tk">Cek Status</button><div id="trs"></div></section>
 <section id="v-help" hidden><h2>Bantuan</h2>
@@ -289,13 +291,13 @@ const nm=u=>String(u).split("@")[0];
 const pr=p=>CUR==="USD"?(p.pu||0):p.p,has=p=>pr(p)>0;
 const bl=(u,c)=>c==="USD"?(u.balu||0):(u.bal||0);
 function setCur(){let c="IDR";try{c=localStorage.getItem("cur")||"IDR"}catch(e){}CUR=(U&&U.usd&&c==="USD")?"USD":"IDR"}
-async function me(){if(T){try{U=await api("me")}catch(e){U=null;setT(null)}}else U=null;setCur();$("acc").textContent=U?nm(U.u)+" \u00b7 "+money(bl(U,CUR),CUR):"Masuk / Daftar";drawMenu()}
-function drawMenu(){const it=[["home","\ud83c\udfae","Home"],["price","\ud83c\udff7\ufe0f","Daftar Harga"],["a:riwayat","\ud83e\uddfe","Riwayat Transaksi"],["a:live","\ud83d\udce2","Transaksi Terakhir"],["track","\ud83d\udd0e","Cek Pesanan"],["a:deposit","\ud83d\udcb0","Deposit Saldo"],["help","\u2753","Bantuan"]];
+async function me(){if(T){try{U=await api("me")}catch(e){U=null;setT(null)}}else U=null;setCur();$("acc").innerHTML=ACCI+(U?'<i class="ad"></i>':"");$("acc").title=U?nm(U.u)+" \u00b7 "+money(bl(U,CUR),CUR):"Masuk / Daftar";drawMenu()}
+function drawMenu(){const it=[["home","\ud83c\udfae","Home"],["price","\ud83c\udff7\ufe0f","Daftar Harga"],["riwayat","\ud83e\uddfe","Riwayat Transaksi"],["track","\ud83d\udd0e","Cek Pesanan"],["a:deposit","\ud83d\udcb0","Deposit Saldo"],["help","\u2753","Bantuan"]];
  $("dr").innerHTML='<div class="drh">MENU</div>'+(U&&U.usd?'<div class="cs"><button data-c="IDR" class="'+(CUR==="IDR"?"on":"")+'">IDR</button><button data-c="USD" class="'+(CUR==="USD"?"on":"")+'">USD</button></div>':"")+it.map(x=>'<button '+(x[0].startsWith("a:")?'data-a="'+x[0].slice(2)+'"':'data-v="'+x[0]+'"')+' class="'+(x[0]===V?"on":"")+'"><b>'+x[1]+'</b><span>'+x[2]+'</span><i>\u203a</i></button>').join("")+'<div class="sp"></div><div class="dmode" role="button" tabindex="0"></div>'}
 const gname=id=>(G.find(g=>g.id===id)||{}).name||"";
 const sold=g=>SOLD[g.name]||0;
 const gic=(g,c)=>g.img?'<img class="'+c+'" src="'+esc(g.img)+'" alt="">':'<span class="ic">'+esc(g.icon||"\ud83c\udfae")+'</span>';
-function refresh(){draw();if(V==="game")showGame();if(V==="price")drawPrice();$("acc").textContent=U?nm(U.u)+" \u00b7 "+money(bl(U,CUR),CUR):"Masuk / Daftar"}
+function refresh(){draw();if(V==="game")showGame();if(V==="price")drawPrice();if(V==="riwayat")drawRiw();$("acc").innerHTML=ACCI+(U?'<i class="ad"></i>':"");$("acc").title=U?nm(U.u)+" \u00b7 "+money(bl(U,CUR),CUR):"Masuk / Daftar"}
 function applyLook(){applyTheme(C.theme);try{localStorage.setItem("theme",JSON.stringify(C.theme||null));C.logo?localStorage.setItem("logo",C.logo):localStorage.removeItem("logo")}catch(e){}
  const g=document.querySelector(".mascot img");if(!g)return;if(!g.dataset.d)g.dataset.d=g.src;
  if(C.logo){if(g.src!==C.logo)g.src=C.logo;g.classList.add("custom")}else{if(g.src!==g.dataset.d)g.src=g.dataset.d;g.classList.remove("custom")}}
@@ -316,13 +318,14 @@ function drawPrice(){
  const f=$("pf").value,ok=P.filter(p=>G.some(g=>g.id===p.gid)&&(!f||p.gid===f)&&has(p));
  $("pt").innerHTML=G.filter(g=>!f||g.id===f).map(g=>{const ps=ok.filter(p=>p.gid===g.id);return ps.length?'<h3 class="gh">'+esc(g.name)+'</h3><div class="pr">'+ps.map(p=>'<div class="pi">'+(p.img?'<img class="pim" src="'+esc(p.img)+'" alt="">':'')+'<span>'+esc(p.n)+(p.pop?" \ud83d\udd25":"")+'</span><b>'+money(pr(p),CUR)+'</b><button class="mini" data-p="'+esc(p.id)+'">Beli</button></div>').join("")+'</div>':""}).join("")||'<div class="hint">Belum ada produk.</div>';
 }
-function render(v){V=v;["home","game","price","track","help"].forEach(x=>{$("v-"+x).hidden=x!==v});$("bar").hidden=v!=="game";document.body.classList.toggle("ing",v==="game");drawMenu();if(v==="price")drawPrice();window.scrollTo(0,0)}
+function render(v){V=v;["home","game","price","track","help","riwayat","info"].forEach(x=>{$("v-"+x).hidden=x!==v});$("bar").hidden=v!=="game";document.body.classList.toggle("ing",v==="game");drawMenu();if(v==="price")drawPrice();if(v==="riwayat"){drawRiw();loadLive()}window.scrollTo(0,0)}
 function setTitle(){const g=V==="game"&&G.find(x=>x.id===GID);document.title=g?"Top Up "+g.name+" - "+C.brand:C.brand+" - "+C.sub}
-const PATH={home:"/",price:"/harga",track:"/cek-pesanan",help:"/bantuan"};
+const PATH={home:"/",price:"/harga",track:"/cek-pesanan",help:"/bantuan",riwayat:"/riwayat"};
 function go(p,rep){if(!rep&&location.pathname!==p&&/^\/game\//.test(p))ldShow();if(location.pathname!==p)history[rep?"replaceState":"pushState"]({n:1},"",p);route()}
 function back(){if(history.state&&history.state.n)history.back();else go("/")}
 function route(){const p=decodeURIComponent(location.pathname).replace(/\/+$/,"")||"/",m=p.match(/^\/game\/(.+)$/);
  if(m){if(!G.length)return;const g=G.find(x=>x.slug===m[1]||x.id===m[1]);if(g){if(g.slug&&m[1]!==g.slug)history.replaceState({n:1},"","/game/"+encodeURIComponent(g.slug));GID=g.id;showGame();render("game");setTitle();return}history.replaceState({},"","/");render("home");return}
+ const mi=p.match(/^\/info\/(.+)$/);if(mi){render("info");drawInfo(mi[1]);return}
  render(Object.keys(PATH).find(k=>PATH[k]===p)||"home");if(C.brand)setTitle()}
 window.addEventListener("popstate",route);
 const lnk=e=>!(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1);
@@ -412,7 +415,7 @@ function home(t){
 let LIVE=[];
 async function loadLive(){try{LIVE=(await api("recent")).list;drawLive()}catch(e){}}
 function drawLive(){$("live").innerHTML=LIVE.map(t=>{const g=G.find(x=>x.name===t.game)||{};return '<div class="lv">'+(g.img?'<img class="pim" src="'+esc(g.img)+'" alt="">':'<span class="em">'+esc(g.icon||"\ud83c\udfae")+'</span>')+'<div><b>'+esc(t.n)+'</b> <small>'+esc(t.game)+'</small><br><small>ID: '+esc(t.id)+' \u00b7 '+ago(t.t)+'</small></div><i class="s-'+t.st+'">'+stl(t)+'</i></div>'}).join("")||'<div class="hint" style="padding:12px">Belum ada transaksi.</div>'}
-setInterval(()=>{if(!document.hidden&&V==="home")loadLive()},20000);
+setInterval(()=>{if(!document.hidden&&V==="riwayat")loadLive()},20000);
 $("acc").onclick=()=>acct();
 function adsInit(X){try{
 if(X.g){const s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(X.g);document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",X.g)}
@@ -426,11 +429,13 @@ if(window.gtag)gtag("event",buy?"purchase":"begin_checkout",{value:v,currency:c,
 function drawPop(){const a=(C&&C.pop)||[];document.body.classList.toggle("hp",a.length>0);$("pop").innerHTML=a.length?'<div class="pw">'+a.map((x,i)=>'<a class="pc" href="#" data-k="'+i+'">'+(x.img?'<img src="'+esc(x.img)+'" alt="">':'')+'<b>'+esc(x.n)+'</b><i>Top up \u2192</i></a>').join("")+'</div>':""}
 $("pop").onclick=e=>{const a=e.target.closest("[data-k]");if(!a)return;e.preventDefault();const x=C.pop[+a.dataset.k],g=G.find(y=>y.id===x.gid);if(g)go("/game/"+encodeURIComponent(g.slug||g.id))};
 function drawFooter(){const s=(C&&C.fl)||[];$("fl").innerHTML=s.map((x,i)=>'<h4 style="color:'+esc(x.c)+'">'+esc(x.t)+'</h4>'+(x.it||[]).map((y,j)=>'<a href="#" class="fk" data-s="'+i+'" data-j="'+j+'">'+esc(y.t)+'</a>').join("")).join("");$("fm").innerHTML=(M&&M.length)?'<h4 style="color:#6ee7b7">METODE PEMBAYARAN</h4><div class="fch">'+M.map(m=>'<span>'+esc(m.name)+'</span>').join("")+'</div>':""}
-$("fl").onclick=e=>{const a=e.target.closest(".fk");if(!a)return;e.preventDefault();const y=C.fl[+a.dataset.s].it[+a.dataset.j];if(y.c==="@wa"){location.href="https://wa.me/"+String(C.wa||"").replace(/\D/g,"");return}$("box").innerHTML='<h3>'+esc(y.t)+'</h3><div class="fb">'+esc(y.c).replace(/\n/g,"<br>")+'</div><button class="btn cl" onclick="$(\'modal\').classList.remove(\'on\')">Tutup</button>';$("modal").classList.add("on")};
-$("dr").addEventListener("click",e=>{if(!e.target.closest(".dmode"))return;const d=!document.body.classList.contains("dk");document.body.classList.toggle("dk",d);try{localStorage.setItem("mode",d?"dark":"light")}catch(x){}});
-var ldT;function ldShow(){const l=$("ld");l.hidden=false;clearTimeout(ldT);ldT=setTimeout(()=>{l.hidden=true},650)}
+$("fl").onclick=e=>{const a=e.target.closest(".fk");if(!a)return;e.preventDefault();const y=C.fl[+a.dataset.s].it[+a.dataset.j];if(y.c==="@wa"){location.href="https://wa.me/"+String(C.wa||"").replace(/\D/g,"");return}if(y.c==="@track"||/^cek pesanan/i.test(y.t)){go(PATH.track);return}go("/info/"+slg(y.t))};
+const ACCI='<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>';
+const slg=s=>String(s||"").toLowerCase().replace(/&/g," dan ").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+function drawInfo(s){let y;for(const x of(C.fl||[]))for(const z of(x.it||[]))if(slg(z.t)===s)y=z;$("itl").textContent=y?y.t:"Halaman tidak ditemukan";$("itx").innerHTML=y?esc(y.c).replace(/\n/g,"<br>"):"Halaman ini tidak tersedia.";document.title=(y?y.t+" - ":"")+C.brand}
+function drawRiw(){const el=$("rw");if(!U){el.innerHTML='<div class="hint">Masuk dulu untuk melihat riwayat transaksimu. Pembeli tanpa akun bisa memakai Cek Pesanan dengan ID transaksi.</div><button class="btn ok" onclick="acct()">Masuk / Daftar</button><button class="btn cl" onclick="go(PATH.track)">Cek Pesanan dengan ID</button>';return}el.innerHTML=U.tx.length?'<div class="hl rw">'+U.tx.map(t=>'<div class="hi"><div><b>'+esc(t.n)+'</b>'+(t.game?' <small>'+esc(t.game)+'</small>':'')+(t.gid?'<br><small>ID: '+esc(t.gid)+'</small>':'')+'<br><small>'+new Date(t.t).toLocaleString("id-ID",{dateStyle:"medium",timeStyle:"short"})+' \u00b7 '+esc(t.id)+'</small></div><div>'+money(t.total,t.cur||"IDR")+'<br><i class="s-'+t.st+'">'+stl(t)+'</i></div></div>').join("")+'</div>':'<div class="hint">Belum ada transaksi.</div>'}
 function hdrBrand(){const i=$("hli");$("hbn").textContent=C.brand||"";const s=C.logo||(document.querySelector(".mascot img")||{}).src;if(s){i.src=s;i.hidden=false}}
-(async()=>{try{const r=await api("pub");C=r.cfg;C.gcid=r.gcid;adsInit(r.ads||{});G=r.games||[];P=r.products;M=r.methods||[];SOLD=r.sold||{};REC=r.rec||[];drawPop();drawFooter();hdrBrand();if(/^#game\//.test(location.hash))history.replaceState({},"","/game/"+location.hash.slice(6));draw();route();setTimeout(toast,3000);loadLive()}catch(e){$("games").textContent="Gagal memuat data."}await me();if(G.length)refresh()})();
+(async()=>{try{const r=await api("pub");C=r.cfg;C.gcid=r.gcid;adsInit(r.ads||{});G=r.games||[];P=r.products;M=r.methods||[];SOLD=r.sold||{};REC=r.rec||[];drawPop();drawFooter();hdrBrand();if(/^#game\//.test(location.hash))history.replaceState({},"","/game/"+location.hash.slice(6));draw();route();setTimeout(toast,3000)}catch(e){$("games").textContent="Gagal memuat data."}await me();if(G.length)refresh()})();
 
 </script>
 </body>
