@@ -64,7 +64,7 @@ async function handle(req){
   switch(b.a){
   case "pub":{const sold={},rec=[];
    for(let i=db.tx.length-1;i>=0;i--){const t=db.tx[i];if(t.type==="order"&&t.st==="sukses"&&t.game){sold[t.game]=(sold[t.game]||0)+1;if(rec.length<8)rec.push({n:t.n,game:t.game,t:t.t})}}
-   return J({cfg:db.cfg,games:db.games,products:db.products,methods:db.methods.filter(m=>m.on).map(m=>({...m,mark:0,fb:0,src:""})),gcid:process.env.GOOGLE_CLIENT_ID||"",sold,rec});}
+   return J({cfg:db.cfg,games:db.games,products:db.products,methods:db.methods.filter(m=>m.on).map(m=>({...m,mark:0,fb:0,src:""})),gcid:process.env.GOOGLE_CLIENT_ID||"",ads:{g:process.env.GOOGLE_TAG_ID||"",m:process.env.META_PIXEL_ID||"",t:process.env.TIKTOK_PIXEL_ID||""},sold,rec});}
   case "recent":{const L=[];for(let i=db.tx.length-1;i>=0&&L.length<10;i--){const t=db.tx[i];if(t.type!=="order"||t.st==="pending")continue;const g=t.gid||"";
    L.push({n:t.n,game:t.game||"",st:t.st,t:t.t,id:g?(g.length>3?g.slice(0,2)+"***"+g.slice(-1):"***"):""})}return J({list:L});}
   case "track":{const t=db.tx.find(x=>x.id===String(b.id||"").trim())||E("Invoice tidak ditemukan");const g=t.gid||"";
