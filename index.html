@@ -329,6 +329,7 @@ function pay(tx){
 async function buy(p,m,gid){
  try{localStorage.setItem("gid",gid)}catch(e){}
  try{const r=await api("order",{pid:p.id,gid:gid,method:m,cur:CUR});
+  adsEv(m==="bal"?"Purchase":"InitiateCheckout",r.tx);
   if(m!=="bal")pay(r.tx);
   else{await me();show('<h3>Pesanan diterima</h3><div class="tot">'+esc(p.n)+' <i style="font-style:normal">untuk</i> '+esc(gid)+'</div><div class="hint">Saldo terpotong '+money(r.tx.total,r.tx.cur)+'. Pesanan sedang diproses admin.<br>ID: '+r.tx.id+'</div><button class="btn ok" onclick="openHome(\'riwayat\')">Lihat riwayat</button><button class="btn cl" onclick="closeM()">Tutup</button>')}
  }catch(e){alert(e.message)}
@@ -364,7 +365,16 @@ async function loadLive(){try{LIVE=(await api("recent")).list;drawLive()}catch(e
 function drawLive(){$("live").innerHTML=LIVE.map(t=>{const g=G.find(x=>x.name===t.game)||{};return '<div class="lv">'+(g.img?'<img class="pim" src="'+esc(g.img)+'" alt="">':'<span class="em">'+esc(g.icon||"\ud83c\udfae")+'</span>')+'<div><b>'+esc(t.n)+'</b> <small>'+esc(t.game)+'</small><br><small>ID: '+esc(t.id)+' \u00b7 '+ago(t.t)+'</small></div><i class="s-'+t.st+'">'+stl(t)+'</i></div>'}).join("")||'<div class="hint" style="padding:12px">Belum ada transaksi.</div>'}
 setInterval(()=>{if(!document.hidden&&V==="home")loadLive()},20000);
 $("acc").onclick=()=>acct();
-(async()=>{try{const r=await api("pub");C=r.cfg;C.gcid=r.gcid;G=r.games||[];P=r.products;M=r.methods||[];SOLD=r.sold||{};REC=r.rec||[];if(/^#game\//.test(location.hash))history.replaceState({},"","/game/"+location.hash.slice(6));draw();route();setTimeout(toast,3000);loadLive()}catch(e){$("games").textContent="Gagal memuat data."}await me();if(G.length)refresh()})();
+function adsInit(X){try{
+if(X.g){const s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(X.g);document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",X.g)}
+if(X.m){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init",X.m);fbq("track","PageView")}
+if(X.t){!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript";o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;var s2=document.getElementsByTagName("script")[0];s2.parentNode.insertBefore(o,s2)};ttq.load(X.t);ttq.page()}(window,document,"ttq")}
+}catch(e){}}
+function adsEv(k,tx){try{const v=+tx.total||0,c=tx.cur||"IDR",nm=String(tx.n||""),buy=k==="Purchase";
+if(window.fbq)fbq("track",k,{value:v,currency:c,content_name:nm});
+if(window.ttq)ttq.track(buy?"CompletePayment":"InitiateCheckout",{value:v,currency:c,content_name:nm});
+if(window.gtag)gtag("event",buy?"purchase":"begin_checkout",{value:v,currency:c,transaction_id:String(tx.id||""),items:[{item_name:nm}]})}catch(e){}}
+(async()=>{try{const r=await api("pub");C=r.cfg;C.gcid=r.gcid;adsInit(r.ads||{});G=r.games||[];P=r.products;M=r.methods||[];SOLD=r.sold||{};REC=r.rec||[];if(/^#game\//.test(location.hash))history.replaceState({},"","/game/"+location.hash.slice(6));draw();route();setTimeout(toast,3000);loadLive()}catch(e){$("games").textContent="Gagal memuat data."}await me();if(G.length)refresh()})();
 
 </script>
 </body>
